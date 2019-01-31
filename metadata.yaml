@@ -1,0 +1,61 @@
+name: neutron-api
+summary: OpenStack Networking API service
+maintainer: OpenStack Charmers <openstack-charmers@lists.ubuntu.com>
+description: |
+  Neutron is a virtual network service for OpenStack, and a part of
+  Netstack. Just like OpenStack Nova provides an API to dynamically
+  request and configure virtual servers, Neutron provides an API to
+  dynamically request and configure virtual networks. These networks
+  connect "interfaces" from other OpenStack services (e.g., virtual NICs
+  from Nova VMs). The Neutron API supports extensions to provide
+  advanced network capabilities (e.g., QoS, ACLs, network monitoring,
+  etc.)
+  .
+  This charm provides the OpenStack Neutron API service.
+tags:
+  - openstack
+extra-bindings:
+  public:
+  admin:
+  internal:
+series:
+  - xenial
+  - bionic
+  - cosmic
+  - trusty
+provides:
+  nrpe-external-master:
+    interface: nrpe-external-master
+    scope: container
+  neutron-api:
+    interface: neutron-api
+  neutron-plugin-api:
+    interface: neutron-plugin-api
+  neutron-load-balancer:
+    interface: neutron-load-balancer
+requires:
+  shared-db:
+    interface: mysql-shared
+  amqp:
+    interface: rabbitmq
+  identity-service:
+    interface: keystone
+  ha:
+    interface: hacluster
+    scope: container
+  vsd-rest-api:
+    interface: vsd-rest-api
+  neutron-plugin-api-subordinate:
+    interface: neutron-plugin-api-subordinate
+    scope: container
+  etcd-proxy:
+    interface: etcd-proxy
+  midonet:
+    interface: midonet
+  external-dns:
+    interface: designate
+  certificates:
+    interface: tls-certificates
+peers:
+  cluster:
+    interface: neutron-api-ha

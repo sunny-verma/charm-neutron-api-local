@@ -1,0 +1,6 @@
+commit-sha-1: 191574e1baaccc825d57bd9889131b27b2856a6b
+commit-short: 191574e
+branch: HEAD
+remote: https://github.com/openstack/charm-neutron-api
+info-generated: Wed Dec 12 14:35:20 UTC 2018
+note: This file should exist only in a built or released charm artifact (not in the charm source code tree).
