@@ -589,9 +589,10 @@ options:
   # Nuage plugin (VSD) config
   nuage-packages:
     type: string
-    default: "nuage-openstack-neutron nuagenetlib"
+    default: "nuage-openstack-neutron nuage-openstack-neutronclient"
     description: |
-      Its [nuage-openstack-neutron nuagenetlib] for Nuage VSP >=3.2R4 & KILO
+      Its [ nuage-openstack-neutron nuage-openstack-neutronclient ] for Nuage VSP >=5.0R1 & NEWTON
+      and [nuage-openstack-neutron nuagenetlib] for Nuage VSP >=3.2R4 & KILO
       and [nuage-neutron python-nuagenetlib] of Nuage VSP <=3.0 & JUNO
   vsd-cms-id:
     type: string
@@ -626,7 +627,7 @@ options:
     description: SSL authentication of the Nuage VSD Server
   vsd-base-uri:
     type: string
-    default: "/nuage/api/v3_0"
+    default: "/nuage/api/v5_0"
     description: Nuage VSD API endpoint URI
   vsd-auth-resource:
     type: string
